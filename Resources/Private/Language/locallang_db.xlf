@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-03-30T15:16:02Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="tt_content.imageorient.0" xml:space="preserve">
+			<source>Above</source>
+		</trans-unit>
+		<trans-unit id="tt_content.imageorient.8" xml:space="preserve">
+			<source>Below</source>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>
