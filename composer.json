@@ -1,0 +1,13 @@
+{
+	"name": "smichaelsen/rwd-imagepositions",
+	"authors": [
+		{
+			"name": "Sebastian Michaelsen",
+			"email": "sebastian@michaelsen.io",
+			"role": "developer"
+		}
+	],
+	"description": "Allows you to position images in a responsive layout based on bootstrap",
+	"license": "GPL-2.0",
+	"type": "typo3-cms-extension"
+}

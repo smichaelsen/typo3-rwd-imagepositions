@@ -3,7 +3,7 @@
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'RWD Image Positions',
 	'description' => 'Allows you to position images in a responsive layout based on bootstrap',
-	'category' => 'plugin',
+	'category' => 'frontend',
 	'author' => 'Sebastian Michaelsen',
 	'author_email' => 'sebastian@michaelsen.io',
 	'state' => 'beta',
