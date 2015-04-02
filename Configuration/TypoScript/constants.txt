@@ -1,0 +1,5 @@
+styles.content.imgtext {
+	colSpace = 0
+	rowSpace = 0
+	textMargin = 0
+}

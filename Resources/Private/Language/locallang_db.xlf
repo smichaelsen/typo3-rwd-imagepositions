@@ -5,6 +5,21 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
+			<trans-unit id="tt_content.tx_rwdimagepositions_imagebreakpoint" xml:space="preserve">
+			<source>Breakpoint</source>
+		</trans-unit>
+		<trans-unit id="tt_content.tx_rwdimagepositions_imagebreakpoint.lg" xml:space="preserve">
+			<source>Desktop</source>
+		</trans-unit>
+		<trans-unit id="tt_content.tx_rwdimagepositions_imagebreakpoint.md" xml:space="preserve">
+			<source>Tablet (landscape)</source>
+		</trans-unit>
+		<trans-unit id="tt_content.tx_rwdimagepositions_imagebreakpoint.sm" xml:space="preserve">
+			<source>Tablet (portrait)</source>
+		</trans-unit>
+		<trans-unit id="tt_content.tx_rwdimagepositions_imagebreakpoint.xs" xml:space="preserve">
+			<source>Smartphone</source>
+		</trans-unit>
 		<trans-unit id="tt_content.imageorient.0" xml:space="preserve">
 			<source>Above</source>
 		</trans-unit>
