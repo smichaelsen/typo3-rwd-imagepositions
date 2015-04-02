@@ -5,52 +5,106 @@ tt_content.image.20.rendering.singleNoCaption.allStdWrap.innerWrap.cObject >
 tt_content.image.20.1.layout.default.element = <img src="###SRC###"###PARAMS######ALTPARAMS######BORDER######SELFCLOSINGTAGSLASH###>
 
 # Add responsive grid row and column classes
-tt_content.image.20.rendering {
-	noCaption {
-		rowStdWrap.wrap = <div class="csc-textpic-imagerow row"> | </div>
-		lastRowStdWrap.wrap = <div class="csc-textpic-imagerow row"> | </div>
-		columnStdWrap.wrap >
-		columnStdWrap.wrap.cObject = COA
-		columnStdWrap.wrap.cObject {
-			10 = TEXT
-			10.value = <div class="csc-textpic-imagecolumn
-			20 = COA
-			20 {
-				# class columns
+tt_content.textpic.20.text.wrap.override {
+	if.isInList.field = imageorient
+	if.value = 25,26
+	cObject = TEXT
+	cObject.value = <div class="csc-textpic-text col-{field:tx_rwdimagepositions_imagebreakpoint}-6">|</div>
+	cObject.insertData = 1
+}
+tt_content.image.20 {
+	layout.25.value = <div class="csc-textpic row">###TEXT######IMAGES###</div>
+	layout.26.value = <div class="csc-textpic row">###IMAGES######TEXT###</div>
+	rendering {
+		noCaption {
+			rowStdWrap.wrap = <div class="csc-textpic-imagerow row"> | </div>
+			lastRowStdWrap.wrap = <div class="csc-textpic-imagerow row"> | </div>
+			columnStdWrap.wrap >
+			columnStdWrap.wrap.cObject = COA
+			columnStdWrap.wrap.cObject {
 				10 = TEXT
-				10.value = columns
-				# grid class
+				10.value = <div class="csc-textpic-imagecolumn
+				20 = COA
+				20 {
+					# class columns
+					10 = TEXT
+					10.value = columns
+					# grid class
+					20 = TEXT
+					20 {
+						stdWrap.stdWrap.dataWrap = 12 / {field:imagecols}
+						stdWrap.prioriCalc = intval
+						stdWrap.dataWrap = col-{field:tx_rwdimagepositions_imagebreakpoint}-|
+						noTrimWrap = | ||
+					}
+					stdWrap.noTrimWrap = | | |
+				}
+
+				30 = TEXT
+				30.value = ###CLASSES###"> | </div>
+			}
+			allStdWrap >
+			allStdWrap.dataWrap.cObject = COA
+			allStdWrap.dataWrap.cObject {
+				10 = TEXT
+				10.value = <div class="csc-textpic-imagewrap
+				10.noTrimWrap = || |
 				20 = TEXT
 				20 {
-					stdWrap.stdWrap.dataWrap = 12 / {field:imagecols}
-					stdWrap.prioriCalc = intval
-					stdWrap.dataWrap = col-{field:tx_rwdimagepositions_imagebreakpoint}-|
-					noTrimWrap = | ||
+					value = col-{field:tx_rwdimagepositions_imagebreakpoint}-6
+					if.isInList.field = imageorient
+					if.value = 25,26
 				}
-				stdWrap.noTrimWrap = | | |
+				30 = TEXT
+				30 {
+					value = " data-csc-images="{register:imageCount}" data-csc-cols="{field:imagecols}
+					if.equals.data = TSFE:config|config|doctype
+					if.value = html5
+				}
+				40 = TEXT
+				40.value = ">|</div>
 			}
-
-			30 = TEXT
-			30.value = ###CLASSES###"> | </div>
 		}
-	}
-	singleNoCaption {
-		fallbackRendering >
-		rowStdWrap.wrap = <div class="row"> | </div>
-		lastRowStdWrap.wrap = <div class="row"> | </div>
-		columnStdWrap.wrap >
-		columnStdWrap.wrap.cObject = COA
-		columnStdWrap.wrap.cObject {
-			10 = TEXT
-			10.value = <div class="
-			20 = TEXT
-			20 {
-				stdWrap.stdWrap.stdWrap.dataWrap = 12 / {field:imagecols}
-				stdWrap.stdWrap.prioriCalc = intval
-				stdWrap.wrap = col-sm-|
+		singleNoCaption {
+			fallbackRendering >
+			rowStdWrap.wrap = <div class="row"> | </div>
+			lastRowStdWrap.wrap = <div class="row"> | </div>
+			columnStdWrap.wrap >
+			columnStdWrap.wrap.cObject = COA
+			columnStdWrap.wrap.cObject {
+				10 = TEXT
+				10.value = <div class="
+				20 = TEXT
+				20 {
+					stdWrap.stdWrap.stdWrap.dataWrap = 12 / {field:imagecols}
+					stdWrap.stdWrap.prioriCalc = intval
+					stdWrap.wrap = col-xs-|
+				}
+
+				30 = TEXT
+				30.value = ">|</div>
 			}
-			30 = TEXT
-			30.value = ">|</div>
+			allStdWrap >
+			allStdWrap.dataWrap.cObject = COA
+			allStdWrap.dataWrap.cObject {
+				10 = TEXT
+				10.value = <div class="csc-textpic-imagewrap
+				10.noTrimWrap = || |
+				20 = TEXT
+				20 {
+					value = col-{field:tx_rwdimagepositions_imagebreakpoint}-6
+					if.isInList.field = imageorient
+					if.value = 25,26
+				}
+				30 = TEXT
+				30 {
+					value = " data-csc-images="{register:imageCount}" data-csc-cols="{field:imagecols}
+					if.equals.data = TSFE:config|config|doctype
+					if.value = html5
+				}
+				40 = TEXT
+				40.value = ">|</div>
+			}
 		}
 	}
 }

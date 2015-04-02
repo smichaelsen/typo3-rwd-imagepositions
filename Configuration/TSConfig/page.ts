@@ -5,7 +5,7 @@ TCEFORM.tt_content {
 	imageorient {
 		altLabels.0 = LLL:EXT:rwd_imagepositions/Resources/Private/Language/locallang_db.xlf:tt_content.imageorient.0
 		altLabels.8 = LLL:EXT:rwd_imagepositions/Resources/Private/Language/locallang_db.xlf:tt_content.imageorient.8
-		removeItems = 1,2,9,10,17,18,25,26
+		removeItems = 1,2,9,10,17,18
 		types.image.disabled = 1
 	}
 	# Setting height & width in pixels is not supported
