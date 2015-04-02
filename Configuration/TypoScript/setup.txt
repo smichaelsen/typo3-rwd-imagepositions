@@ -1,33 +1,56 @@
-
 # Remove csc-textpic-center-outer and csc-textpic-center-inner which center the image. Not needed with RWD
 tt_content.image.20.rendering.singleNoCaption.allStdWrap.innerWrap.cObject >
 
+# Remove width and height attributes from images
+tt_content.image.20.1.layout.default.element = <img src="###SRC###"###PARAMS######ALTPARAMS######BORDER######SELFCLOSINGTAGSLASH###>
 
 # Add responsive grid row and column classes
-tt_content.image.20.rendering.noCaption {
-	rowStdWrap.wrap = <div class="csc-textpic-imagerow row"> | </div>
-	lastRowStdWrap.wrap = <div class="csc-textpic-imagerow row"> | </div>
-	columnStdWrap.wrap >
-	columnStdWrap.wrap.cObject = COA
-	columnStdWrap.wrap.cObject {
-		10 = TEXT
-		10.value = <div class="csc-textpic-imagecolumn
-		20 = COA
-		20 {
-			# class columns
+tt_content.image.20.rendering {
+	noCaption {
+		rowStdWrap.wrap = <div class="csc-textpic-imagerow row"> | </div>
+		lastRowStdWrap.wrap = <div class="csc-textpic-imagerow row"> | </div>
+		columnStdWrap.wrap >
+		columnStdWrap.wrap.cObject = COA
+		columnStdWrap.wrap.cObject {
 			10 = TEXT
-			10.value = columns
-			# grid class
+			10.value = <div class="csc-textpic-imagecolumn
+			20 = COA
+			20 {
+				# class columns
+				10 = TEXT
+				10.value = columns
+				# grid class
+				20 = TEXT
+				20 {
+					stdWrap.stdWrap.dataWrap = 12 / {field:imagecols}
+					stdWrap.prioriCalc = intval
+					stdWrap.dataWrap = col-{field:tx_rwdimagepositions_imagebreakpoint}-|
+					noTrimWrap = | ||
+				}
+				stdWrap.noTrimWrap = | | |
+			}
+
+			30 = TEXT
+			30.value = ###CLASSES###"> | </div>
+		}
+	}
+	singleNoCaption {
+		fallbackRendering >
+		rowStdWrap.wrap = <div class="row"> | </div>
+		lastRowStdWrap.wrap = <div class="row"> | </div>
+		columnStdWrap.wrap >
+		columnStdWrap.wrap.cObject = COA
+		columnStdWrap.wrap.cObject {
+			10 = TEXT
+			10.value = <div class="
 			20 = TEXT
 			20 {
-				stdWrap.stdWrap.dataWrap = 12 / {field:imagecols}
-				stdWrap.prioriCalc = intval
-				stdWrap.dataWrap = col-{field:tx_rwdimagepositions_imagebreakpoint}-|
-				noTrimWrap = | ||
+				stdWrap.stdWrap.stdWrap.dataWrap = 12 / {field:imagecols}
+				stdWrap.stdWrap.prioriCalc = intval
+				stdWrap.wrap = col-sm-|
 			}
-			stdWrap.noTrimWrap = | | |
+			30 = TEXT
+			30.value = ">|</div>
 		}
-		30 = TEXT
-		30.value = ###CLASSES###"> | </div>
 	}
 }
